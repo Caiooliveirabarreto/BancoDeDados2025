@@ -1,0 +1,246 @@
+Consulta Dados:
+
+MariaDB [etecmcm2]> SELECT * FROM produtos;
++------------+-------------------+--------+-------+------------+--------------+----------------+
+| id_produto | nome              | preco  | quant | marca      | id_categoria | unidade_medida |
++------------+-------------------+--------+-------+------------+--------------+----------------+
+|          1 | Sabão em pó       |  25.49 |     4 | OMO        |           10 | un             |
+|          2 | Mussarela         |  63.45 |    20 | Sadia      |           11 | kg             |
+|          3 | Brócolis          |   8.99 |    30 | Hortifruti |           11 | Pacote 500     |
+|          4 | Presunto          |  60.35 |    50 | President  |           11 | kg             |
+|          5 | Iogurte Natural   |   3.40 |    60 | Itambé     |            3 | un             |
+|          6 | Leite             |   6.49 |    12 | Paulista   |            3 | un             |
+|          7 | Milho             |   5.25 |     6 | Fugini     |            5 | 300g           |
+|          8 | Ervilhas          |   4.29 |     4 | Fugini     |            5 | 300g           |
+|          9 | Acém              |  42.75 |    30 | Perdigão   |            4 | kg             |
+|         10 | Picanha           | 126.22 |    20 | Perdigão   |            4 | kg             |
+|         11 | Microondas        | 450.99 |     4 | Samsung    |            9 | un             |
+|         12 | Geladeira         | 850.39 |     2 | Samsung    |            9 | un             |
+|         13 | Coca-Cola         |   3.49 |    20 | Coca-Cola  |            7 | Lata 340g      |
+|         14 | Detergente        |   6.39 |    10 | Ypê        |           10 | un             |
+|         15 | Cerveja           |   5.50 |    15 | Skol       |            7 | Lata 340g      |
+|         16 | Papel Filme       |  15.29 |     5 | Wyda       |           12 | un             |
+|         17 | Papel Toalha      |  12.99 |     5 | Snob       |           12 | un             |
+|         18 | Alface            |   6.99 |    15 | Frutelo    |            6 | kg             |
+|         19 | Maçã              |   8.99 |    12 | Hortifruti |            6 | kg             |
+|         20 | Perfume Masculino |  50.99 |     4 | Oboticário |            8 | 200ml          |
+|         21 | Perfume Feminino  |  90.99 |     3 | Jequiti    |            8 | 200ml          |
++------------+-------------------+--------+-------+------------+--------------+----------------+
+21 rows in set (0.000 sec)
+
+MariaDB [etecmcm2]> SELECT nome, preco FROM produtos;
++-------------------+--------+
+| nome              | preco  |
++-------------------+--------+
+| Sabão em pó       |  25.49 |
+| Mussarela         |  63.45 |
+| Brócolis          |   8.99 |
+| Presunto          |  60.35 |
+| Iogurte Natural   |   3.40 |
+| Leite             |   6.49 |
+| Milho             |   5.25 |
+| Ervilhas          |   4.29 |
+| Acém              |  42.75 |
+| Picanha           | 126.22 |
+| Microondas        | 450.99 |
+| Geladeira         | 850.39 |
+| Coca-Cola         |   3.49 |
+| Detergente        |   6.39 |
+| Cerveja           |   5.50 |
+| Papel Filme       |  15.29 |
+| Papel Toalha      |  12.99 |
+| Alface            |   6.99 |
+| Maçã              |   8.99 |
+| Perfume Masculino |  50.99 |
+| Perfume Feminino  |  90.99 |
++-------------------+--------+
+21 rows in set (0.000 sec)
+
+MariaDB [etecmcm2]> SELECT * FROM produtos WHERE preco > 20;
++------------+-------------------+--------+-------+------------+--------------+----------------+
+| id_produto | nome              | preco  | quant | marca      | id_categoria | unidade_medida |
++------------+-------------------+--------+-------+------------+--------------+----------------+
+|          1 | Sabão em pó       |  25.49 |     4 | OMO        |           10 | un             |
+|          2 | Mussarela         |  63.45 |    20 | Sadia      |           11 | kg             |
+|          4 | Presunto          |  60.35 |    50 | President  |           11 | kg             |
+|          9 | Acém              |  42.75 |    30 | Perdigão   |            4 | kg             |
+|         10 | Picanha           | 126.22 |    20 | Perdigão   |            4 | kg             |
+|         11 | Microondas        | 450.99 |     4 | Samsung    |            9 | un             |
+|         12 | Geladeira         | 850.39 |     2 | Samsung    |            9 | un             |
+|         20 | Perfume Masculino |  50.99 |     4 | Oboticário |            8 | 200ml          |
+|         21 | Perfume Feminino  |  90.99 |     3 | Jequiti    |            8 | 200ml          |
++------------+-------------------+--------+-------+------------+--------------+----------------+
+9 rows in set (0.000 sec)
+
+MariaDB [etecmcm2]> SELECT * FROM produtos WHERE quant <= 10;
++------------+-------------------+--------+-------+------------+--------------+----------------+
+| id_produto | nome              | preco  | quant | marca      | id_categoria | unidade_medida |
++------------+-------------------+--------+-------+------------+--------------+----------------+
+|          1 | Sabão em pó       |  25.49 |     4 | OMO        |           10 | un             |
+|          7 | Milho             |   5.25 |     6 | Fugini     |            5 | 300g           |
+|          8 | Ervilhas          |   4.29 |     4 | Fugini     |            5 | 300g           |
+|         11 | Microondas        | 450.99 |     4 | Samsung    |            9 | un             |
+|         12 | Geladeira         | 850.39 |     2 | Samsung    |            9 | un             |
+|         14 | Detergente        |   6.39 |    10 | Ypê        |           10 | un             |
+|         16 | Papel Filme       |  15.29 |     5 | Wyda       |           12 | un             |
+|         17 | Papel Toalha      |  12.99 |     5 | Snob       |           12 | un             |
+|         20 | Perfume Masculino |  50.99 |     4 | Oboticário |            8 | 200ml          |
+|         21 | Perfume Feminino  |  90.99 |     3 | Jequiti    |            8 | 200ml          |
++------------+-------------------+--------+-------+------------+--------------+----------------+
+10 rows in set (0.000 sec)
+
+MariaDB [etecmcm2]> SELECT nome, preco FROM produtos ORDER BY preco ASC LIMIT 5;
++-----------------+-------+
+| nome            | preco |
++-----------------+-------+
+| Iogurte Natural |  3.40 |
+| Coca-Cola       |  3.49 |
+| Ervilhas        |  4.29 |
+| Milho           |  5.25 |
+| Cerveja         |  5.50 |
++-----------------+-------+
+5 rows in set (0.000 sec)
+
+MariaDB [etecmcm2]>
+
+MariaDB [etecmcm2]> SELECT nome, preco FROM produtos ORDER BY preco DESC LIMIT 5;
++------------------+--------+
+| nome             | preco  |
++------------------+--------+
+| Geladeira        | 850.39 |
+| Microondas       | 450.99 |
+| Picanha          | 126.22 |
+| Perfume Feminino |  90.99 |
+| Mussarela        |  63.45 |
++------------------+--------+
+5 rows in set (0.000 sec)
+
+MariaDB [etecmcm2]> SELECT COUNT(*) AS total_produtos FROM produtos;
++----------------+
+| total_produtos |
++----------------+
+|             21 |
++----------------+
+1 row in set (0.000 sec)
+
+MariaDB [etecmcm2]> SELECT AVG(preco) AS preco_medio FROM produtos;
++-------------+
+| preco_medio |
++-------------+
+|   88.080000 |
++-------------+
+1 row in set (0.000 sec)
+
+MariaDB [etecmcm2]> SELECT nome, quant FROM produtos ORDER BY quant DESC LIMIT 1;
++-----------------+-------+
+| nome            | quant |
++-----------------+-------+
+| Iogurte Natural |    60 |
++-----------------+-------+
+1 row in set (0.000 sec)
+
+MariaDB [etecmcm2]>
+
+MariaDB [etecmcm2]> SELECT p.nome, c.nome_cat FROM produtos p JOIN categorias c ON p.id_categoria = c.id_categoria;
++-------------------+-------------------+
+| nome              | nome_cat          |
++-------------------+-------------------+
+| Sabão em pó       | Limpeza           |
+| Mussarela         | Frios             |
+| Brócolis          | Frios             |
+| Presunto          | Frios             |
+| Iogurte Natural   | Latícinios        |
+| Leite             | Latícinios        |
+| Milho             | Enlatados         |
+| Ervilhas          | Enlatados         |
+| Acém              | Carnes            |
+| Picanha           | Carnes            |
+| Microondas        | Eletroeletrônicos |
+| Geladeira         | Eletroeletrônicos |
+| Coca-Cola         | Bebidas           |
+| Detergente        | Limpeza           |
+| Cerveja           | Bebidas           |
+| Papel Filme       | Embalagens        |
+| Papel Toalha      | Embalagens        |
+| Alface            | Hortifruti        |
+| Maçã              | Hortifruti        |
+| Perfume Masculino | Perfumaria        |
+| Perfume Feminino  | Perfumaria        |
++-------------------+-------------------+
+21 rows in set (0.000 sec)
+
+MariaDB [etecmcm2]> SELECT p.nome, p.marca, p.preco FROM produtos p JOIN categorias c ON p.id_categoria = c.id_categoria WHERE c.nome_cat = 'Laticínios';
++-----------------+----------+-------+
+| nome            | marca    | preco |
++-----------------+----------+-------+
+| Iogurte Natural | Itambé   |  3.40 |
+| Leite           | Paulista |  6.49 |
++-----------------+----------+-------+
+2 rows in set (0.000 sec)
+
+MariaDB [etecmcm2]> SELECT c.nome_cat, COUNT(*) AS total_produtos FROM produtos p JOIN categorias c ON p.id_categoria = c.id_categoria GROUP BY c.nome_cat;
++-------------------+----------------+
+| nome_cat          | total_produtos |
++-------------------+----------------+
+| Bebidas           |              2 |
+| Carnes            |              2 |
+| Eletroeletrônicos |              2 |
+| Embalagens        |              2 |
+| Enlatados         |              2 |
+| Frios             |              3 |
+| Hortifruti        |              2 |
+| Latícinios        |              2 |
+| Limpeza           |              2 |
+| Perfumaria        |              2 |
++-------------------+----------------+
+10 rows in set (0.000 sec)
+
+MariaDB [etecmcm2]> SELECT * FROM produtos
+    -> WHERE preco BETWEEN 10 AND 20;
++------------+--------------+-------+-------+-------+--------------+----------------+
+| id_produto | nome         | preco | quant | marca | id_categoria | unidade_medida |
++------------+--------------+-------+-------+-------+--------------+----------------+
+|         16 | Papel Filme  | 15.29 |     5 | Wyda  |           12 | un             |
+|         17 | Papel Toalha | 12.99 |     5 | Snob  |           12 | un             |
++------------+--------------+-------+-------+-------+--------------+----------------+
+2 rows in set (0.000 sec)
+
+MariaDB [etecmcm2]> SELECT * FROM produtos
+    -> WHERE nome LIKE 'P%';
++------------+-------------------+--------+-------+------------+--------------+----------------+
+| id_produto | nome              | preco  | quant | marca      | id_categoria | unidade_medida |
++------------+-------------------+--------+-------+------------+--------------+----------------+
+|          4 | Presunto          |  60.35 |    50 | President  |           11 | kg             |
+|         10 | Picanha           | 126.22 |    20 | Perdigão   |            4 | kg             |
+|         16 | Papel Filme       |  15.29 |     5 | Wyda       |           12 | un             |
+|         17 | Papel Toalha      |  12.99 |     5 | Snob       |           12 | un             |
+|         20 | Perfume Masculino |  50.99 |     4 | Oboticário |            8 | 200ml          |
+|         21 | Perfume Feminino  |  90.99 |     3 | Jequiti    |            8 | 200ml          |
++------------+-------------------+--------+-------+------------+--------------+----------------+
+6 rows in set (0.000 sec)
+
+MariaDB [etecmcm2]> SELECT DISTINCT marca FROM produtos;
++------------+
+| marca      |
++------------+
+| OMO        |
+| Sadia      |
+| Hortifruti |
+| President  |
+| Itambé     |
+| Paulista   |
+| Fugini     |
+| Perdigão   |
+| Samsung    |
+| Coca-Cola  |
+| Ypê        |
+| Skol       |
+| Wyda       |
+| Snob       |
+| Frutelo    |
+| Oboticário |
+| Jequiti    |
++------------+
+17 rows in set (0.000 sec)
+
+MariaDB [etecmcm2]>
